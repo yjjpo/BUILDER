@@ -1,31 +1,25 @@
+import { PizzaDirector } from './src/PizzaDirector';
 import { MargheritaPizzaBuilder } from './src/MargheritaPizzaBuilder';
 import { PepperoniPizzaBuilder } from './src/PepperoniPizzaBuilder';
-import { PizzaDirector } from './src/PizzaDirector';
+import { Pizza } from './src/Pizza';
 
 const margheritaBuilder = new MargheritaPizzaBuilder();
-const pepperoniBuilder = new PepperoniPizzaBuilder();
-
-const director = new PizzaDirector(margheritaBuilder);
-
-const margheritaPizza = director.createMargheritaPizza();
+const pizzaDirector = new PizzaDirector(margheritaBuilder);
+const pizzaMargherita = pizzaDirector.makeMargheritaPizza();
 console.log("Pizza Margherita:");
-margheritaPizza.display();
+pizzaMargherita.display();
 
-console.log("\n");
+const pepperoniBuilder = new PepperoniPizzaBuilder();
+const pizzaPepperoni = pizzaDirector.makePepperoniPizza();
+console.log("\nPizza Pepperoni:");
+pizzaPepperoni.display();
 
-director["builder"] = pepperoniBuilder;
-const pepperoniPizza = director.createPepperoniPizza();
-console.log("Pizza Pepperoni:");
-pepperoniPizza.display();
-
-console.log("\n");
-const customPizza = new MargheritaPizzaBuilder()
-    .setSize("grande")
-    .setDough("recheada")
-    .addTopping("Queijo")
-    .addTopping("Azeitonas")
-    .addTopping("Cogumelos")
-    .getResult();
-
-console.log("Pizza Personalizada:");
-customPizza.display();
+console.log("\nPizza Personalizada:");
+const customPizza = new MargheritaPizzaBuilder();
+customPizza.setSize('grande')
+  .setDough('recheada')
+  .addTopping('Queijo')
+  .addTopping('Azeitonas')
+  .addTopping('Cogumelos');
+const pizzaPersonalizada = customPizza.getResult();
+pizzaPersonalizada.display();

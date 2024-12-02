@@ -9,7 +9,7 @@ var Pizza = /** @class */ (function () {
     }
     Pizza.prototype.display = function () {
         console.log("Pizza ".concat(this.size, " | Massa: ").concat(this.dough));
-        console.log("Ingredientes: ".concat(this.toppings.join(", ")));
+        console.log("Ingredientes: ".concat(this.toppings.join(', ')));
     };
     return Pizza;
 }());

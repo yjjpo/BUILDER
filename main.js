@@ -1,26 +1,27 @@
 "use strict";
+// src/main.ts
 Object.defineProperty(exports, "__esModule", { value: true });
+var PizzaDirector_1 = require("./src/PizzaDirector");
 var MargheritaPizzaBuilder_1 = require("./src/MargheritaPizzaBuilder");
 var PepperoniPizzaBuilder_1 = require("./src/PepperoniPizzaBuilder");
-var PizzaDirector_1 = require("./src/PizzaDirector");
+// Criação da pizza Margherita usando o Diretor
 var margheritaBuilder = new MargheritaPizzaBuilder_1.MargheritaPizzaBuilder();
+var pizzaDirector = new PizzaDirector_1.PizzaDirector(margheritaBuilder);
+var pizzaMargherita = pizzaDirector.makeMargheritaPizza();
+console.log("\nPizza Margherita:");
+pizzaMargherita.display();
+// Criação da pizza Pepperoni usando o Diretor
 var pepperoniBuilder = new PepperoniPizzaBuilder_1.PepperoniPizzaBuilder();
-var director = new PizzaDirector_1.PizzaDirector(margheritaBuilder);
-var margheritaPizza = director.createMargheritaPizza();
-console.log("Pizza Margherita:");
-margheritaPizza.display();
-console.log("\n");
-director["builder"] = pepperoniBuilder;
-var pepperoniPizza = director.createPepperoniPizza();
-console.log("Pizza Pepperoni:");
-pepperoniPizza.display();
-console.log("\n");
-var customPizza = new MargheritaPizzaBuilder_1.MargheritaPizzaBuilder()
-    .setSize("grande")
-    .setDough("recheada")
-    .addTopping("Queijo")
-    .addTopping("Azeitonas")
-    .addTopping("Cogumelos")
-    .getResult();
-console.log("Pizza Personalizada:");
-customPizza.display();
+var pizzaPepperoni = pizzaDirector.makePepperoniPizza();
+console.log("\nPizza Pepperoni:");
+pizzaPepperoni.display();
+// Criação da pizza personalizada diretamente pelo Builder
+console.log("\nPizza Personalizada:");
+var customPizza = new MargheritaPizzaBuilder_1.MargheritaPizzaBuilder(); // Criando a pizza personalizada diretamente
+customPizza.setSize('grande')
+    .setDough('recheada')
+    .addTopping('Queijo')
+    .addTopping('Azeitonas')
+    .addTopping('Cogumelos');
+var pizzaPersonalizada = customPizza.getResult();
+pizzaPersonalizada.display(); // Exibir a pizza personalizada

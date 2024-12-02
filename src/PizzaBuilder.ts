@@ -1,9 +1,9 @@
-import { Pizza } from "./Pizza";
+import { Pizza } from './Pizza';
 
 export interface PizzaBuilder {
-    reset(): void;
-    setSize(size: string): this;
-    setDough(dough: string): this;
-    addTopping(topping: string): this;
-    getResult(): Pizza;
+  reset(): void;
+  setSize(size: string): PizzaBuilder;
+  setDough(dough: string): PizzaBuilder;
+  addTopping(topping: string): PizzaBuilder;
+  getResult(): Pizza;
 }

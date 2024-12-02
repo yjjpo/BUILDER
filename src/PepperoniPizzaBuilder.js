@@ -4,14 +4,14 @@ exports.PepperoniPizzaBuilder = void 0;
 var Pizza_1 = require("./Pizza");
 var PepperoniPizzaBuilder = /** @class */ (function () {
     function PepperoniPizzaBuilder() {
-        this.size = "média";
-        this.dough = "tradicional";
-        this.toppings = ["Queijo", "Pepperoni"];
+        this.size = '';
+        this.dough = '';
+        this.toppings = [];
     }
     PepperoniPizzaBuilder.prototype.reset = function () {
-        this.size = "média";
-        this.dough = "tradicional";
-        this.toppings = ["Queijo", "Pepperoni"];
+        this.size = '';
+        this.dough = '';
+        this.toppings = [];
     };
     PepperoniPizzaBuilder.prototype.setSize = function (size) {
         this.size = size;

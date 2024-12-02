@@ -4,14 +4,14 @@ exports.MargheritaPizzaBuilder = void 0;
 var Pizza_1 = require("./Pizza");
 var MargheritaPizzaBuilder = /** @class */ (function () {
     function MargheritaPizzaBuilder() {
-        this.size = "grande";
-        this.dough = "fina";
-        this.toppings = ["Queijo", "Tomate", "Manjericão"];
+        this.size = '';
+        this.dough = '';
+        this.toppings = [];
     }
     MargheritaPizzaBuilder.prototype.reset = function () {
-        this.size = "grande";
-        this.dough = "fina";
-        this.toppings = ["Queijo", "Tomate", "Manjericão"];
+        this.size = '';
+        this.dough = '';
+        this.toppings = [];
     };
     MargheritaPizzaBuilder.prototype.setSize = function (size) {
         this.size = size;
