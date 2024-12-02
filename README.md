@@ -30,4 +30,5 @@ O código cliente testa a criação de pizzas predefinidas e pizzas personalizad
 
 # Tecnologias Usadas:
 TypeScript para implementação das classes e interfaces.
+
 Node.js para execução do código.
