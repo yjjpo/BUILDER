@@ -1,3 +1,5 @@
+import { Pizza } from "./Pizza";
+
 export interface PizzaBuilder {
     reset(): void;
     setSize(size: string): this;
