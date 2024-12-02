@@ -28,6 +28,9 @@ A classe PizzaDirector define as receitas predefinidas para a criação de pizza
 Código Cliente (main.ts):
 O código cliente testa a criação de pizzas predefinidas e pizzas personalizadas diretamente, sem a utilização do Diretor, mas apenas com Builders.
 
+# Como Rodar
+Basta digitar no TERMINAL do CodeSpace: node main.js
+
 # Tecnologias Usadas:
 TypeScript para implementação das classes e interfaces.
 
